@@ -9,6 +9,7 @@ import com.utils.EasyPoiExcelUtil;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -24,9 +25,11 @@ public class EasyPoiController {
     private DataManager dataManager;
 
     @RequestMapping(value = "/export", method = RequestMethod.GET)
-    public void Export(HttpServletRequest request, HttpServletResponse response) {
+    public void export(HttpServletRequest request, HttpServletResponse response, @RequestParam(value = "type") int type) {
         // 导出最普通的
-        exportGeneral(request, response);
+        if (1 == type) {
+            exportGeneral(request, response);
+        }
     }
 
     public void exportGeneral(HttpServletRequest request, HttpServletResponse response) {
@@ -34,7 +37,7 @@ public class EasyPoiController {
         List<ExportGeneral> excelList = dataManager.getExportGeneral();
         // 设置名称
         String sheetName = "sheet";
-        String excelName = "问答记录" + ExcelConstant.SUFFIX_XLS;
+        String excelName = "导出" + ExcelConstant.SUFFIX_XLSX;
 
         ExportParams exportParams = new ExportParams();
         exportParams.setSheetName(sheetName);

@@ -3,6 +3,8 @@ package com.model.excel;
 import cn.afterturn.easypoi.excel.annotation.Excel;
 import lombok.Data;
 
+import java.util.Date;
+
 @Data
 public class ExportGeneral {
 
@@ -16,12 +18,12 @@ public class ExportGeneral {
     private String text;
 
     @Excel(name = "数字")
-    private String numeral;
+    private Integer numeral;
 
     @Excel(name = "时间戳")
-    private String timeStamp;
+    private Long timeStamp;
 
     @Excel(name = "时间")
-    private String date;
+    private Date date;
 
 }

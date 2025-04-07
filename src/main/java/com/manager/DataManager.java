@@ -33,9 +33,9 @@ public class DataManager {
             exportGeneral.setId(entity.getId());
             exportGeneral.setName(entity.getName());
             exportGeneral.setText(entity.getText());
-            exportGeneral.setNumeral(entity.getId());
-            exportGeneral.setTimeStamp(entity.getId());
-            exportGeneral.setDate(entity.getId());
+            exportGeneral.setNumeral(entity.getNumeral());
+            exportGeneral.setTimeStamp(entity.getTimeStamp());
+            exportGeneral.setDate(entity.getDate());
             list.add(exportGeneral);
         }
         return list;

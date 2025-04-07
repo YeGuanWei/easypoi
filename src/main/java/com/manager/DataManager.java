@@ -3,10 +3,12 @@ package com.manager;
 import com.alibaba.fastjson.JSON;
 import com.model.entity.ExcelData;
 import com.model.excel.ExportGeneral;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class DataManager {
 
     /**

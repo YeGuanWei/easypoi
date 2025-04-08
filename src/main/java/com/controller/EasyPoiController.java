@@ -6,6 +6,7 @@ import com.constant.ExcelConstant;
 import com.manager.DataManager;
 import com.model.excel.ExportGeneral;
 import com.utils.EasyPoiExcelUtil;
+import com.utils.ExcelStyleUtil;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -41,6 +42,8 @@ public class EasyPoiController {
 
         ExportParams exportParams = new ExportParams();
         exportParams.setSheetName(sheetName);
+        exportParams.setStyle(ExcelStyleUtil.class);
+
         Workbook workbook = ExcelExportUtil.exportExcel(exportParams, ExportGeneral.class, excelList);
         // 下载
         String contentType = "application/octet-stream";

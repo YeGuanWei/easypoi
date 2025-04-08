@@ -11,6 +11,7 @@ public class ExcelStyleUtil implements IExcelExportStyler {
     private static final short FONT_SIZE_TEN = 9;
     private static final short FONT_SIZE_ELEVEN = 10;
     private static final short FONT_SIZE_TWELVE = 10;
+
     /**
      * 大标题样式
      */
